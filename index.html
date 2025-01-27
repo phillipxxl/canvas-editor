@@ -1,0 +1,476 @@
+<!doctype html>
+<html class="no-js" lang="de" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="blubb">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/vendor.js"></script>
+</head>
+<body>
+  <div id="collage-designer" class="collage-designer-theme-1">
+    <div class="wrap">
+        <ul class="toolbar">
+            <li data-action="upload" class="active"><span class="counter"></span><img class="icon color-dark" src="https://canvasprint.se/images/photos.svg" /><br>Your photos</li>
+            <li data-action="templates" title="Choose a different template"><img class="icon color-dark" src="https://canvasprint.se/images/templates.svg" /><br>Templates</li>
+            <li data-action="background" title="Choose background colour"><img class="icon color-dark" src="https://canvasprint.se/images/background.svg" /><br>Background</li>
+            <li class="hidden" data-action="text" title="Change Text Settings"><img class="icon color-dark" src="https://canvasprint.se/images/letters.svg" /><br>Text</li>
+            <li data-action="save" title="Save collage"><img class="icon color-dark" src="https://canvasprint.se/images/floppy-disk.svg" /><br>Save</li>
+            <li data-action="info" title="Info"><img class="icon color-dark" src="https://canvasprint.se/images/information-circle.svg" /><br>Info</li>
+        </ul>
+        <div class="tool-zone active">
+          <div class="pull-bar"><img class="icon color-white" src="https://canvasprint.se/images/arrow-down.svg" /></div>
+          <div data-zone="upload" class="active">
+            <div class="view-1 active">
+              <div>
+                <img src="https://canvasprint.se/images/upload-photos-teaser.png" />
+                <p>Lade deine Bilder hoch oder ziehe sie direkt hier rein.</p>
+                <button type="button" class="cta btn-upload js-canvas-upload">Bilder hinzufügen</button>
+              </div>
+            </div>
+            <div class="view-2">
+              <div class="tools-wrap">
+                <p><span data-action="delete-all-uploads"><img class="icon color-dark" src="https://canvasprint.se/images/delete.svg" />Delete all photos</span></p>
+                <p><label for="hide-used-images"><input type="checkbox" id="hide-used-images" name="hide-used-images" /><span>Verwendete Fotos ausblenden</span> <span class="counter"></span></label></p>
+                <p class="m-hide"><span data-action="autofill"><img class="icon color-dark" src="https://canvasprint.se/images/magic-wand.svg" />Collage automatisch befüllen</span></p>
+              </div>
+              <div class="uploads-wrap">
+                <ul class="uploads"></ul>
+              </div>
+              <button type="button" class="cta btn-upload js-canvas-upload">Bilder hinzufügen</button>
+            </div>
+          </div>
+          <div data-zone="templates">
+            <div class="filter">
+              <div class="tools-wrap">
+                <button type="button" data-action="load-initial-collage"><img class="icon color-black" src="https://canvasprint.se/images/arrow-turn-backward.svg">Ursprüngliche Vorlage</button>
+              </div>
+              <div class="select">
+                <select name="cats">
+                  <option selected="true" hidden>Vorlagen filtern</option>
+                  <option value="favorite">Beliebt</option>
+                    <option value="grid">Geburtstag</option>
+                    <option value="birthday">Gitter</option>
+                    <option value="friends">Freunde</option>
+                    <option value="family">Familie</option>
+                    <option value="goodbye">Abschied</option>
+                    <option value="travel">Reisen/Urlaub</option>
+                    <option value="love">Liebe</option>
+                    <option value="all">Alle</option>
+                </select>
+              </div>
+            </div>
+            <ul>
+              <li data-id="dyn1" data-keywords="" data-favorite="1">
+                <div class="thumb"><img loading="lazy" src="https://canvasprint.se/api//templates/thumbs/template-thumb-dyn1.gif" alt="" /></div>
+                <div class="tags"><div><div class="tag" data-tag="favorite">Beliebt</div></div></div>
+              </li>
+            </ul>
+            <p><a href="#" target="_parent">Alle Vorlagen</a></p>
+          </div>
+          <div data-zone="background">
+            <div class="icon-tools d-hide">
+              <button type="button" data-action="background-color"><span class="color-preview"></span><label>Farbe</label></button>
+              <button type="button" data-action="background-image" class="js-canvas-bg-upload"><img class="icon color-black" src="https://canvasprint.se/images/picture.svg" /><label><input type="file" name="files[]" title=" ">Eigenes Bild</label></button>
+              <!--<button type="button" data-action="background-pattern"><img class="icon color-black" src="https://canvasprint.se/images/grid.svg" /><label>Texture</label></button>-->
+            </div>
+            <div class="subzone">
+              <div class="back js-back d-hide"><div><img class="icon color-white" src="https://canvasprint.se/images/arrow-left.svg" /><label>Zurück</label></div></div>
+              <label class="m-hide"><strong>Hintergrundfarbe</strong></label>
+              <div data-subzone="background-color">
+                <div>
+                  <span data-color="#000000" style="background-color: #000000 ;"></span>
+                  <span data-color="#575757" style="background-color: #575757 ;"></span>
+                  <span data-color="#bababa" style="background-color: #bababa ;"></span>
+                  <span class="active" data-color="#ffffff" style="background-color: #ffffff ;"></span>
+                  <span data-color="#7b8d95" style="background-color: #7b8d95 ;"></span>
+                  <span data-color="#8f9988" style="background-color: #8f9988 ;"></span>
+                  <span data-color="#d99d8c" style="background-color: #d99d8c ;"></span>
+                  <span data-color="#d2b8c5" style="background-color: #d2b8c5 ;"></span>
+                  <span data-color="#a8bdc7" style="background-color: #a8bdc7 ;"></span>
+                  <span data-color="#c1d9bf" style="background-color: #c1d9bf ;"></span>
+                  <span data-color="#e9debb" style="background-color: #e9debb ;"></span>
+                  <span data-color="#e1dbca" style="background-color: #e1dbca ;"></span>
+                  <span data-color="#bbe3e3" style="background-color: #bbe3e3 ;"></span>
+                  <span data-color="#f7f3ca" style="background-color: #f7f3ca ;"></span>
+                  <span data-color="#eeeedd" style="background-color: #eeeedd ;"></span>
+                  <span data-color="#f6edea" style="background-color: #f6edea ;"></span>
+                </div>
+              </div>
+              <!--<label class="m-hide"><strong>Foto</strong></label>-->
+              <div class="m-hide">
+                <button type="button" data-action="background-image" class="js-canvas-bg-upload alt"><img class="icon color-black" src="https://canvasprint.se/images/picture.svg" /><label><input type="file" name="files[]" title=" ">Eigenes Bild als Hintergrundbild</label></button>
+              </div>
+              <!--
+              <label class="m-hide"><strong>Unsere Hintergrundbilder</strong></label>
+              <div class="filter m-hide">
+                <div class="select">
+                  <select name="pattern">
+                    <option selected="true" hidden>Hintergrund wählen</option>
+                    <option value="favorite">Beliebt</option>
+                  </select>
+                </div>
+              </div>
+              <div data-subzone="background-pattern">
+                <span data-bg-pattern="pattern1.png"><img src="https://canvasprint.se/images/muster/thumbs/pattern1.png" /></span>
+                <span data-bg-pattern="pattern1.png"><img src="https://canvasprint.se/images/muster/thumbs/pattern1.png" /></span>
+                <span data-bg-pattern="pattern1.png"><img src="https://canvasprint.se/images/muster/thumbs/pattern1.png" /></span>
+                <span data-bg-pattern="pattern1.png"><img src="https://canvasprint.se/images/muster/thumbs/pattern1.png" /></span>
+                <span data-bg-pattern="pattern1.png"><img src="https://canvasprint.se/images/muster/thumbs/pattern1.png" /></span>
+                <span data-bg-pattern="pattern1.png"><img src="https://canvasprint.se/images/muster/thumbs/pattern1.png" /></span>
+                <span data-bg-pattern="pattern1.png"><img src="https://canvasprint.se/images/muster/thumbs/pattern1.png" /></span>
+              </div>
+              -->
+            </div>
+          </div>
+          <div data-zone="text">
+            <div class="icon-tools">
+              <button type="button" data-action="font-edit"><img class="icon color-black" src="https://canvasprint.se/images/pencil.svg" /><label>Bearbeiten</label></button>
+              <button type="button" data-action="font-color"><span class="color-preview"></span><label>Farbe</label></button>
+              <button type="button" data-action="font-family"><img class="icon color-black" src="https://canvasprint.se/images/letters.svg" /><label>Schriftart</label></button>
+              <div>
+                <div>
+                  <button type="button" data-action="font-zoom-in"><img class="icon color-black" src="https://canvasprint.se/images/add-circle.svg" /></button>
+                  <input type="text" name="font-size" value="12" disabled />
+                  <span class="divider"></span>
+                  <button type="button" data-action="font-zoom-out"><img class="icon color-black" src="https://canvasprint.se/images/remove-circle.svg" /></button>
+                </div>
+                <label>Schriftgröße </label>
+              </div>
+            </div>
+            <div class="subzone">
+              <div class="back js-back"><div><img class="icon color-white" src="https://canvasprint.se/images/arrow-left.svg" /><label>Zurück</label></div></div>
+              <div data-subzone="font-color">
+                <div>
+                  <span class="" data-color="#1e1e1e" style="background-color: #1e1e1e ;"></span>
+                  <span data-color="#737373" style="background-color: #737373 ;"></span>
+                  <span data-color="#a0a0a0" style="background-color: #a0a0a0 ;"></span>
+                  <span data-color="#f7f7f7" style="background-color: #f7f7f7 ;"></span>
+                  <span data-color="#61727a" style="background-color: #61727a ;"></span>
+                  <span data-color="#5a90cc" style="background-color: #5a90cc ;"></span>
+                  <span data-color="#7ba39e" style="background-color: #7ba39e ;"></span>
+                  <span data-color="#66a660" style="background-color: #66a660 ;"></span>
+                  <span data-color="#969950" style="background-color: #969950 ;"></span>
+                  <span data-color="#bcbc81" style="background-color: #bcbc81 ;"></span>
+                  <span data-color="#c3a829" style="background-color: #c3a829 ;"></span>
+                  <span data-color="#936e50" style="background-color: #936e50 ;"></span>
+                  <span data-color="#b0786d" style="background-color: #b0786d ;"></span>
+                  <span data-color="#c59f9b" style="background-color: #c59f9b ;"></span>
+                  <span data-color="#a06280" style="background-color: #a06280 ;"></span>
+                  <span data-color="#b93939" style="background-color: #b93939 ;"></span>
+                </div>
+              </div>
+              <div data-subzone="font-family">
+                <span data-family="dm serif display" style="font-family: 'dm serif display', sans-serif;">DM Serif</span>
+                <span class="" data-family="Open Sans" style="font-family: 'Open Sans', sans-serif;">Open Sans</span>
+                <span data-family="auteur" style="font-family: 'auteur', serif;">Auteur</span>
+                <span data-family="lobster" style="font-family: 'lobster', sans-serif;">Lobster</span>
+                <span data-family="signerica" style="font-family: 'signerica', sans-serif;">Signerica</span>
+                <span data-family="donitta" style="font-family: 'donitta', cursive;">Donitta</span>
+                <span data-family="fuzzy bubbles" style="font-family: 'fuzzy bubbles', sans-serif;">Fuzzy bubbles</span>
+                <span data-family="bastian" style="font-family: 'bastian', sans-serif;">Bastian</span>
+                <span data-family="josefin" style="font-family: 'josefin', sans-serif;">Josefin</span>
+                <span data-family="poppins" style="font-family: 'poppins', sans-serif;">Poppins</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="editor">
+          <div class="meta-nav-new icon-tools">
+            <div>
+              <button type="button" class="disabled" data-action="undo"><img class="icon color-black" src="https://canvasprint.se/images/arrow-turn-backward.svg" /></button>
+              <span class="divider"></span>
+              <button type="button" class="disabled" data-action="redo"><img class="icon color-black" src="https://canvasprint.se/images/arrow-turn-forward.svg" /></button>
+            </div>
+            <button type="button" data-action="autofill" title="Ordne deine Bilder neu an"><img class="icon color-black" src="https://canvasprint.se/images/magic-wand.svg" /><label>Zufällig</label></button>
+            <button type="button" data-action="blackwhite" title="Aktiviere einen Schwarz Weiss Look"><img class="icon color-black" src="https://canvasprint.se/images/blackwhite.svg" /><label>S/W</label></button>
+            <button type="button" data-action="clear" title="Leeren"><img class="icon color-black" src="https://canvasprint.se/images/eraser.svg" /><label>leeren</label></button>
+            <button type="button" data-action="preview"><img class="icon color-black" src="https://canvasprint.se/images/search.svg" /><label>Vorschau</label></button>
+          </div>
+          <div class="text-tools m-hide" style="visibility: hidden;">
+            <div data-section="colors">
+              <label>Textfarbe</label>
+              <div>
+                <span class="active" data-color="#1e1e1e" style="background-color: #1e1e1e ;"></span>
+                <span data-color="#737373" style="background-color: #737373 ;"></span>
+                <span data-color="#a0a0a0" style="background-color: #a0a0a0 ;"></span>
+                <span data-color="#f7f7f7" style="background-color: #f7f7f7 ;"></span>
+                <span data-color="#61727a" style="background-color: #61727a ;"></span>
+                <span data-color="#5a90cc" style="background-color: #5a90cc ;"></span>
+                <span data-color="#7ba39e" style="background-color: #7ba39e ;"></span>
+                <span data-color="#66a660" style="background-color: #66a660 ;"></span>
+                <span data-color="#969950" style="background-color: #969950 ;"></span>
+                <span data-color="#bcbc81" style="background-color: #bcbc81 ;"></span>
+                <span data-color="#c3a829" style="background-color: #c3a829 ;"></span>
+                <span data-color="#936e50" style="background-color: #936e50 ;"></span>
+                <span data-color="#b0786d" style="background-color: #b0786d ;"></span>
+                <span data-color="#c59f9b" style="background-color: #c59f9b ;"></span>
+                <span data-color="#a06280" style="background-color: #a06280 ;"></span>
+                <span data-color="#b93939" style="background-color: #b93939 ;"></span>
+              </div>
+            </div>
+            <div data-section="font-family">
+              <label>Schriftart</label>
+              <div class="select">
+                <select name="font-family">
+                  <option value="dm serif display" style="font-family: 'dm serif display', sans-serif;">DM Serif</option>
+                  <option value="Open Sans" style="font-family: 'Open Sans', sans-serif;" selected>Open Sans</option>
+                  <option value="auteur" style="font-family: 'auteur', serif;">Auteur</option>
+                  <option value="lobster" style="font-family: 'lobster', sans-serif;">Lobster</option>
+                  <option value="signerica" style="font-family: 'signerica', sans-serif;">Signerica</option>
+                  <option value="donitta" style="font-family: 'donitta', cursive;">Donitta</option>
+                  <option value="fuzzy bubbles" style="font-family: 'fuzzy bubbles', sans-serif;">Fuzzy bubbles</option>
+                  <option value="bastian" style="font-family: 'bastian', sans-serif;">Bastian</option>
+                  <option value="josefin" style="font-family: 'josefin', sans-serif;">Josefin</option>
+                  <option value="poppins" style="font-family: 'poppins', sans-serif;">Poppins</option>
+                </select>
+              </div>
+            </div>
+            <div data-section="font-size">
+              <label>Schriftgröße</label>
+              <div>
+                <button type="button" data-action="font-zoom-in"><img class="icon color-black" src="https://canvasprint.se/images/plus.svg" /></button>
+                <input type="text" name="font-size" value="12" disabled />
+                <span class="divider"></span>
+                <button type="button" data-action="font-zoom-out"><img class="icon color-black" src="https://canvasprint.se/images/minus.svg" /></button>
+              </div>
+            </div>
+          </div>
+          <div class="zoom-fields">
+            <div>
+              <span data-action="zoom-in"><img class="icon color-black" src="https://canvasprint.se/images/plus.svg" /></span>
+              <span data-action="zoom-out"><img class="icon color-black" src="https://canvasprint.se/images/minus.svg" /></span>
+            </div>
+          </div>
+          <div class="finish">
+            <button type="button" class="cta" data-action="finish" disabled>In den Warenkorb<img class="icon color-gray" src="https://canvasprint.se/images/cart-add.svg" /></button>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="collage-editor"></canvas>
+          </div>
+        </div>
+    </div>
+    <template id="save-wrap">
+      <div class="save-wrap">
+        <button type="button" class="cta js-download">Datei-Download (ab 19.99 €)</button><br>
+        <div class="list">
+          <div>Das perfekte Geschenk</div>
+          <div>Sofort bei dir</div>
+          <div>Jederzeit ausdrucken</div>
+          <aside class="indicator"><img class="icon" src="https://canvasprint.se/images/heart.svg" />Für deine Liebsten</aside>
+        </div>
+        <div class="divider"><span>oder</span></div>
+        <p><strong>Speichern und später fortsetzen</strong></p>
+        <tab-system>
+          <item name="Per E-Mail" class="active" title="Lass dir einen Link zu deiner Collage per E-Mail schicken">
+            <form name="save-email">
+              <div class="input-enclosed">
+                <input type="email" name="email" placeholder="example@example.com" required /><button type="submit">Senden</button>
+              </div>
+            </form>
+          </item>
+          <item name="Link erstellen" class="js-generate-link" title="Erstellt einen Link zu deiner Collage">
+            <form name="link-code" class="hidden">
+              <div class="input-enclosed">
+                <input type="text" value="" disabled /><button type="button" onclick="collage_maker_2.copyCode()">Kopieren</button>
+              </div>
+            </form>
+          </item>
+        </tab-system>
+      </div>
+    </template>
+    <template id="image-edit-wrap">
+      <div class="image-edit-wrap">
+        <div class="top-bar">
+          <div class="mobile"><div><button type="button" data-action="beforeafter"><label>Vorher</label><img class="icon color-black" src="https://canvasprint.se/images/filter-active-right.svg" /><label>Nachher</label></button></div></div>
+          <!--<div><button type="button" data-action="prev"><img class="icon color-black" src="https://canvasprint.se/images/button-arrow-left.svg" /></button> <span class="edit-pagination"></span> <button type="button" data-action="next"><img class="icon color-black" src="https://canvasprint.se/images/button-arrow-right.svg" /></button></div>-->
+        </div>
+        <div class="wrap">
+          <div class="box cropper-wrap">
+            <div class="cropper">
+              <span class="quality" data-quality="0" title=""></span>
+            </div>
+          </div>
+          <div class="box settings">
+            <div class="mobile">
+              <div class="tools-switcher">
+                <div>
+                  <button type="button" data-action="rotate"><img class="icon color-black" src="https://canvasprint.se/images/rotate-right.svg" /><label>Drehen</label></button>
+                </div>
+                <div>
+                  <button type="button" data-action="mirror"><img class="icon color-black" src="https://canvasprint.se/images/flip-horizontal.svg" /><label>Spiegeln</label></button>
+                </div>
+                <div>
+                  <button type="button" data-action="maximize"><img class="icon color-black" src="https://canvasprint.se/images/picture-in-picture-exit.svg" /><label>Maximieren </label></button>
+                </div>
+                <div data-target="brightness">
+                  <img class="icon color-black" src="https://canvasprint.se/images/sun.svg" />
+                  <label>Helligkeit</label>
+                  <span class="filter-value">0</span>
+                </div>
+                <div data-target="contrast">
+                  <img class="icon color-black" src="https://canvasprint.se/images/contrast.svg" />
+                  <label>Kontrast</label>
+                  <span class="filter-value">0</span>
+                </div>
+                <div data-target="saturation">
+                  <img class="icon color-black" src="https://canvasprint.se/images/droplet.svg" />
+                  <label>Sättigung</label>
+                  <span class="filter-value">0</span>
+                </div>
+                <div data-target="blackwhite">
+                  <img class="icon color-black" src="https://canvasprint.se/images/blackwhite.svg" />
+                  <label>SW</label>
+                  <toggle-switch color="var(--theme-primary-color)" width="40px" height="18px"></toggle-switch>
+                </div>
+              </div>
+            </div>
+            <div class="tools-wrap filter">
+              <div data-target="brightness">
+                <label>Helligkeit</label>
+                <img class="icon color-black" src="https://canvasprint.se/images/sun.svg" /><single-range-slider min="-100" max="100" value="0" name="brightness"></single-range-slider>
+                <span class="filter-value" data-value="0">0</span>
+              </div>
+              <div data-target="contrast">
+                <label>Kontrast</label>
+                <img class="icon color-black" src="https://canvasprint.se/images/contrast.svg" /><single-range-slider min="-100" max="100" value="0" name="contrast"></single-range-slider>
+                <span class="filter-value" data-value="0">0</span>
+              </div>
+              <div data-target="saturation">
+                <label>Sättigung</label>
+                <img class="icon color-black" src="https://canvasprint.se/images/droplet.svg" /><single-range-slider min="-100" max="100" value="0" name="saturation"></single-range-slider>
+                <span class="filter-value" data-value="0">0</span>
+              </div>
+              <!--<div><label>Schwarzweiss</label><br><label class="control-switch-box"><input class="control-switch" name="blackwhite" type="checkbox" /><span></span></label></div>-->
+            </div>
+            <div class="tools-wrap transformation desktop">
+              <button type="button" data-action="single_blackwhite"><img class="icon color-black" src="https://canvasprint.se/images/blackwhite.svg" /><label>SW</label></button>
+              <button type="button" data-action="rotate"><img class="icon color-black" src="https://canvasprint.se/images/rotate-right.svg" /><label>Drehen</label></button>
+              <button type="button" data-action="mirror"><img class="icon color-black" src="https://canvasprint.se/images/flip-horizontal.svg" /><label>Spiegeln</label></button>
+              <button type="button" data-action="maximize"><img class="icon color-black" src="https://canvasprint.se/images/picture-in-picture-exit.svg" /><label>Maximieren</label></button>
+            </div>
+            <div class="tools-wrap desktop">
+              <div class="desktop">
+                <button type="button" data-action="beforeafter"><label>Vorher</label><img class="icon color-black" src="https://canvasprint.se/images/filter-active-right.svg" /><label>Nachher</label></button>
+              </div>
+            </div>
+            <div class="finish">
+              <button type="button" class="js-reset cta passive">Zurücksetzen</button>
+              <div class="confirm flex-row">
+                <span class="hidden js-trigger"><span>auf alle Bilder anwenden</span></span>
+                <button type="button" class="js-confirm cta">Übernehmen</button>
+                <button type="button" class="js-confirm-extra cta"><img class="icon" src="https://canvasprint.se/images/arrow-down.svg" /></button>
+              </div>
+              <div class="mobile confirm-filter">
+                <button type="button" class="cta js-confirm-filter">✓</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="upload-wrapper">
+      <div class="upload-wrapper">
+        <div class="view-0">
+          <span class="back js-back">Zurück</span>
+          <h2>Füge deine Bilder hinzu:</h2>
+          <div class="box dragzone">
+            <output></output>
+            <p><small>Zieh deine Bilder hier rein oder klicke<br>auf den Button um sie auszuwählen</small></p>
+          </div>
+          <button type="button" class="cta">+ Eigene Bilder</button>
+        </div>
+        <div class="view-1">
+          <h2>Lade deine Bilder hoch</h2>
+          <div class="box dragzone">
+            <p>Unterstützte Formate:<br>JPEG, PNG, PDF, etc. (max. 500 MB)</p>
+            <div><button type="button"><input type="file" name="files[]" multiple="" title=" "><span class="d-hide"><img src="https://canvasprint.se/images/upload-phone.svg" /></span><span class="m-hide"><img src="https://canvasprint.se/images/upload-desktop.svg" /></span><br><span class="cta">Von diesem gerät</span></button></div>
+            <div><button type="button" class="js-switch"><span class="d-hide"><img src="https://canvasprint.se/images/upload-phone-to-phone-transfer.svg" /></span><span class="m-hide"><img src="https://canvasprint.se/images/upload-phone-to-desktop-transfer.svg" /></span><br><span class="cta"><span class="d-hide">Vom Handy</span><span class="m-hide">Von anderem Gerät</span></span></button></div>
+          </div>
+        </div>
+        <div class="view-2">
+          <span class="back js-back">Zurück</span>
+          <h2>Lade deine Bilder hoch</h2>
+          <div class="box dragzone">
+            <p>Unterstützte Formate:<br>JPEG, PNG, PDF, etc. (max. 500 MB)</p>
+            <div><span class="m-hide"><img src="https://canvasprint.se/images/qr-transfer.svg" /></span><span class="d-hide"><img src="https://canvasprint.se/images/qr-transfer.svg" /></span></div>
+            <div>
+              <div><strong>1. QR-Code mit Smartphone-Kamera oder App scannen</strong></div>
+              <div><strong>2. Bilder wählen und hochladen</strong></div>
+              <div><strong>3. Erst wenn alle Bilder hochgeladen sind, diesen Dialog schließen</strong></div>
+            </div>
+          </div>
+          <p class="highlight">Link per Email senden</p>
+          <div class="qr-code"></div>
+        </div>
+      </div>
+    </template>
+    <template id="info-wrapper">
+      <div class="info-wrapper">
+        <nav>
+          <button type="button" data-action="preview" class="active"><img class="icon color-black" src="https://canvasprint.se/images/search.svg" /><br>Vorschau</button>
+          <button type="button" data-action="size-comparison"><img class="icon color-black" src="https://canvasprint.se/images/expand.svg"><br>Größen</button>
+          <button type="button" data-action="tips"><img class="icon color-black" src="https://canvasprint.se/images/light-bulb.svg"><br>Tipps</button>
+        </nav>
+        <div class="content">
+          <div data-target="preview" class="active">
+            <canvas></canvas>
+          </div>
+          <div data-target="size-comparison">
+            <div>
+              <canvas></canvas>
+              <div class="buttons"></div>
+            </div>
+            <div>
+              <div class="delivery-box">
+                <img src="https://canvasprint.se/images/truck.svg" />
+                Versandfertig: <span></span>
+              </div>
+            </div>
+          </div>
+          <div data-target="tips">
+            <h2>Unsere 3 Tipps<br>für deine <strong>perfekte</strong> Collage!</h2>
+            <custom-carousel arrow-icon="https://canvasprint.se/images/arrow-left.svg" class="info-wrapper-slider">
+              <slide>
+                <div>
+                  <p class="headline">1 von 3: Richte deine Bilder aus</p>
+                  <img src="https://canvasprint.se/images/collage-tip-1.png" />
+                  <p>Ziehe deine Fotos mit der dem Finger in die gewünschte Position im Bildfenster.</p>
+                </div>
+              </slide>
+              <slide>
+                <div>
+                  <p class="headline">2 von 3: Collagen Thema</p>
+                  <img src="https://canvasprint.se/images/collage-tip-2.png" />
+                  <p>Collagen sollten ein Thema haben, das wirkt auf den Betrachter attraktiver.</p>
+                </div>
+              </slide>
+              <slide>
+                <div>
+                  <p class="headline">3 von 3: ???</p>
+                  <img src="https://canvasprint.se/images/collage-tip-3.png" />
+                  <p>Klare Bildinhalte verbessern das Ergebnis und sehen so besser an deiner Wand aus.</p>
+                </div>
+              </slide>
+            </custom-carousel>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <script src="js/components.js" type="module"></script>            
+  <script src="js/helper.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    var params = {
+      language: 'us'
+    };
+    const collage_maker_2 = new Plugin_Collage_Maker_2(params);
+  </script>
+</body>
+</html>
