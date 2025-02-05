@@ -342,11 +342,10 @@ class Plugin_Collage_Maker_2 {
 								let numbers_arr = new_number.split("");
 								let counter = 0;
 								for (var overlay of temp_overlay) {
-									overlay.file =
-										overlay.file.replace(
-											"xxx",
-											numbers_arr[counter],
-										) + ".png";
+									overlay.file = overlay.file.replace(
+										"xxx",
+										numbers_arr[counter],
+									) + ".png";
 									counter++;
 								}
 							} else {
@@ -856,9 +855,8 @@ class Plugin_Collage_Maker_2 {
 				window.innerHeight || 0,
 			);
 			if (vw <= 960) {
-				var max_w =
-					document.querySelector("#collage-designer .editor")
-						.getBoundingClientRect().width;
+				var max_w = document.querySelector("#collage-designer .editor")
+					.getBoundingClientRect().width;
 				var old_zoom = this.canvas.getZoom();
 				var ratio = this.canvas.getWidth() / max_w;
 				//temp_default_zoom = old_zoom / ratio;
@@ -2327,10 +2325,9 @@ class Plugin_Collage_Maker_2 {
 			},
 			ready: () => {
 				if (this.is_mobile) {
-					let new_max_w =
-						document.querySelector(
-							".xxl-overlay.finished > .wrapper > output",
-						).getBoundingClientRect().width;
+					let new_max_w = document.querySelector(
+						".xxl-overlay.finished > .wrapper > output",
+					).getBoundingClientRect().width;
 					edit_meta.cropper_max_w =
 						edit_meta.cropper_max_h =
 							new_max_w;
@@ -2810,7 +2807,7 @@ class Plugin_Collage_Maker_2 {
 							/////////////
 							let x = 0 - edit_meta.crop_area.left;
 							let y = 0 - edit_meta.crop_area.top;
-							let scale_factor = edit_meta.crop_area.width /
+							let scale_factor = edit_meta.canvas.width /
 								el.clipPath.width;
 
 							// Erfassen der inversen Skalierungsfaktoren von crop_area
@@ -2818,14 +2815,12 @@ class Plugin_Collage_Maker_2 {
 							if (
 								edit_meta.canvas.width > edit_meta.canvas.height
 							) {
-								crop_scale =
-									(edit_meta.crop_area.height *
-										edit_meta.crop_area.scaleY) /
+								crop_scale = (edit_meta.crop_area.height *
+									edit_meta.crop_area.scaleY) /
 									edit_meta.canvas.getHeight();
 							} else {
-								crop_scale =
-									(edit_meta.crop_area.width *
-										edit_meta.crop_area.scaleX) /
+								crop_scale = (edit_meta.crop_area.width *
+									edit_meta.crop_area.scaleX) /
 									edit_meta.canvas.getWidth();
 							}
 							let inverseScaleX = 1 / (crop_scale || 1);
@@ -3401,13 +3396,12 @@ class Plugin_Collage_Maker_2 {
 		if (this.is_mobile) {
 			let slot_options = document.querySelector(".editor .slot-options");
 			document.querySelector(".editor").append(slot_options);
-			let x =
-				parseFloat(
-					window.getComputedStyle(
-						document.querySelector(".canvas-wrap"),
-						null,
-					).getPropertyValue("padding").replace("px", ""),
-				) -
+			let x = parseFloat(
+				window.getComputedStyle(
+					document.querySelector(".canvas-wrap"),
+					null,
+				).getPropertyValue("padding").replace("px", ""),
+			) -
 				parseFloat(
 					window.getComputedStyle(slot_options, null)
 						.getPropertyValue("padding-left").replace("px", ""),
