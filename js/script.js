@@ -2838,15 +2838,17 @@ class Plugin_Collage_Maker_2 {
 								object,
 								left,
 								top,
-								inverseScaleX,
-								inverseScaleY,
 							) {
 								const clipPathBoundingBox = object.clipPath
 									.getBoundingRect();
 								const relativeLeft = clipPathBoundingBox.left +
-									left * inverseScaleX;
+									(left *
+										(object.width * object.scaleX) /
+										edit_meta.canvas.width);
 								const relativeTop = clipPathBoundingBox.top +
-									top * inverseScaleY;
+									(top *
+										(object.height * object.scaleY) /
+										edit_meta.canvas.height);
 								const objectOffsetX =
 									(object.width * object.scaleX) / 2;
 								const objectOffsetY =
@@ -2859,10 +2861,8 @@ class Plugin_Collage_Maker_2 {
 
 							const newCenterPosition = convertRelativeToClipPath(
 								el,
-								x / scale_factor,
-								y / scale_factor,
-								inverseScaleX,
-								inverseScaleY,
+								x,
+								y,
 							);
 
 							el.set({
@@ -2870,8 +2870,6 @@ class Plugin_Collage_Maker_2 {
 								top: newCenterPosition.top,
 							});
 							el.setCoords();
-
-							// SKALIERUNG PASST ABER POSITIONIERUNG NICHT MEHR GANZ NACH ZWEITEM MAL
 
 							this.canvas.requestRenderAll();
 							xxlPopup.close();
